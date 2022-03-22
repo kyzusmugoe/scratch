@@ -1,0 +1,87 @@
+
+doctype html
+html
+  include header.pug
+  body
+
+    div
+      
+      | 首先，引用scratch.js，然後div套用scratch的class
+      br
+      | 再來設定以下的東西...
+      br
+      | 參數調整
+      br
+      | sh-width:寬度
+      br
+      | sh-height:高度
+      br
+      | sh-percent:刮除的百分比0~100，大哥你這邊可以依照需求微調
+      br
+      | sh-brush-size:筆刷尺寸
+      br
+      | sh-img-top:上層被刮除的圖片path 
+      br
+      | sh-img-bottom=下層顯示圖片path
+    
+    
+    div.scratch(
+        data-sh-width="800"
+        data-sh-height="800"
+        data-sh-percent="80"
+        data-sh-brush-size="100"
+        data-sh-img-top="./images/mikansu1.jpg" 
+        data-sh-img-bottom="./images/mikansu2.jpg" 
+    )
+    
+    div.scratch(
+        data-sh-width="600"
+        data-sh-height="600"
+        data-sh-percent="40"
+        data-sh-brush-size="80"
+        data-sh-img-top="./images/mia1.jpg" 
+        data-sh-img-bottom="./images/mia2.jpg" 
+    )
+
+    div.scratch(
+        data-sh-width="400"
+        data-sh-height="400"
+        data-sh-percent="30"
+        data-sh-brush-size="30"
+        data-sh-img-top="./images/hguc_xi_front.jpg" 
+        data-sh-img-bottom="./images/hguc_xi_back.jpg" 
+    )
+
+    div.scratch(
+        data-sh-width="400"
+        data-sh-height="400"
+        data-sh-percent="50"
+        data-sh-brush-size="60"
+        data-sh-img-top="./images/f1.jpeg" 
+        data-sh-img-bottom="./images/f2.jpeg" 
+    )
+
+    div.scratch(
+        data-sh-width="200"
+        data-sh-height="200"
+        data-sh-percent="50"
+        data-sh-brush-size="60"
+        data-sh-img-top="./images/g1.jpeg" 
+        data-sh-img-bottom="./images/g2.jpeg" 
+    )
+
+    div.scratch(
+        data-sh-width="200"
+        data-sh-height="200"
+        data-sh-percent="50"
+        data-sh-brush-size="60"
+        data-sh-img-top="./images/h1.jpeg" 
+        data-sh-img-bottom="./images/h2.jpeg" 
+    )
+
+    //-
+      div
+        div#js-container.container
+          canvas#js-canvas.canvas(width=_w height=_h)
+          div#backImg(width=_w height=_h)
+              img(src=_src)
